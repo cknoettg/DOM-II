@@ -17,3 +17,16 @@ keyImg.addEventListener('keydown', (event) => {
     }
 });
 
+//NodeList's don't have eventListeners - so this only works on first a
+//Expanded to work on all nav a's
+let navWheel = document.querySelectorAll('.nav a');
+navWheel.forEach(anchor => anchor.addEventListener('wheel', (event) => {    
+        event.target.style.fontSize = '24px';
+}));
+
+//has a boolean as final condition and html must be modified to
+//draggable="true"
+let dragp = document.querySelector('.intro p');
+dragp.addEventListener('drag', (event) => {
+    event.target.style.color = 'green';
+}, false);
