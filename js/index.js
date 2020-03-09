@@ -13,16 +13,21 @@ mouseTitle.addEventListener('mouseover', (event) => {
 //keydown not working
 let keyImg = document.querySelector('.intro img');
 keyImg.addEventListener('keydown', (event) => {
-    if (event.code == "KeyA") {
-        event.target.style.border = '2px solid blue';
-    }
+    event.target.style.border = '2px solid blue';
 });
 
-//NodeList's don't have eventListeners - so this only works on first a
-//Expand to work on all nav a's
-let navWheel = document.querySelector('.nav a');
-navWheel.addEventListener('wheel', (event) => {    
-        event.target.style.fontSize = '24px';
+//Sample:
+// document.querySelectorAll(".nav a").forEach(element => {
+// 	element.addEventListener("wheel", function() {
+// 		element.style.color = "pink";
+// 	})
+// });
+// added nested events
+document.querySelectorAll(".nav a").forEach(element => {
+	element.addEventListener("wheel", function() {
+        event.target.style.fontSize = "24px";
+        event.target.style.color = "blue";
+	})
 });
 
 //has a boolean as final condition and html must be modified to
@@ -37,16 +42,16 @@ loadImg.addEventListener('load', (event) => {
     event.target.style.border = '2px solid red';
 });
 
-//uses window - not working
-let focusp = document.body;
-focusp.addEventListener('load', (event) => {
-    event.target.style.backgroundColor = 'blue';
+//uses window
+let loader = document.querySelector('.intro h2');
+window.addEventListener('load', () => {
+    loader.style.fontSize = '50px';
 });
 
-//uses window - not working
-//let resizer = document.body;
-window.addEventListener('resize', (event) => {
-    event.target.style.backgroundColor = 'blue';
+//uses window
+let resizer = document.querySelector('.intro p');
+window.addEventListener('resize', () => {
+    resizer.style.backgroundColor = 'blue';
 });
 
 //uses document - not working
