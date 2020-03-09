@@ -220,6 +220,11 @@ img {
   border-top: 2px dashed #C0C0C0;
   background: #FFEBCD;
 }
+.footer textarea {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
 .footer p {
   text-align: center;
   color: #212529;

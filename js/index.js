@@ -10,7 +10,7 @@ mouseTitle.addEventListener('mouseover', (event) => {
     event.target.style.color = 'red';
 });
 
-//keydown not working
+//keydown - not working
 let keyImg = document.querySelector('.intro img');
 keyImg.addEventListener('keydown', (event) => {
     event.target.style.border = '2px solid blue';
@@ -34,7 +34,7 @@ document.querySelectorAll(".nav a").forEach(element => {
 //draggable="true"
 let dragp = document.querySelector('.intro p');
 dragp.addEventListener('drag', (event) => {
-    event.target.style.color = 'green';
+    event.target.style.color = 'orange';
 }, false);
 
 let loadImg = document.querySelector('.img-content img');
@@ -54,16 +54,21 @@ window.addEventListener('resize', () => {
     resizer.style.backgroundColor = 'blue';
 });
 
-//uses document - not working
-let scrolly = document.querySelector('.text-content p');
-scrolly.addEventListener('scroll', (event) => {
-    event.target.style.backgroundColor = 'green';
+//can use window or element, plus using querySelectorAll
+let scrolly = document.querySelectorAll('.text-content p');
+scrolly.forEach(element => {
+    window.addEventListener('scroll', () => {
+        element.style.backgroundColor = 'pink';
+    })
 });
 
-//uses element - not working
-let selecty = document.querySelector('.text-content p');
+//uses element
+// select events can be dispatched only on form <input type="text">
+// and <textarea> elements
+// had to add textarea to html and css to make this one work
+let selecty = document.querySelector('textarea');
 selecty.addEventListener('select', (event) => {
-    event.target.style.backgroundColor = 'pink';
+    event.target.style.color = 'red';
 });
 
 let twoClick = document.querySelector('.text-content p');
