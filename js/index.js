@@ -10,10 +10,12 @@ mouseTitle.addEventListener('mouseover', (event) => {
     event.target.style.color = 'red';
 });
 
-//keydown - not working
+//keydown - uses document
 let keyImg = document.querySelector('.intro img');
-keyImg.addEventListener('keydown', (event) => {
-    event.target.style.border = '2px solid blue';
+document.addEventListener('keydown', (event) => {
+    if (event.key == 'a') {
+        keyImg.style.border = '2px solid blue';
+    }
 });
 
 //Sample:
