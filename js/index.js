@@ -25,10 +25,12 @@ document.addEventListener('keydown', (event) => {
 // 	})
 // });
 // added nested events
+// added preventDefault to prevent the nav links from going anywhere
 document.querySelectorAll(".nav a").forEach(element => {
 	element.addEventListener("wheel", function() {
         event.target.style.fontSize = "24px";
         event.target.style.color = "blue";
+        event.preventDefault();
 	})
 });
 
@@ -73,9 +75,11 @@ selecty.addEventListener('select', (event) => {
     event.target.style.color = 'red';
 });
 
+//added stopPropagation
 let twoClick = document.querySelector('.text-content p');
 twoClick.addEventListener('dblclick', (event) => {
     event.target.style.backgroundColor = 'orange';
+    event.stopPropagation();
 });
 
 
