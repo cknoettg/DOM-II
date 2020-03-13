@@ -76,8 +76,13 @@ selecty.addEventListener('select', (event) => {
 });
 
 //added stopPropagation
-let twoClick = document.querySelector('.text-content p');
+let twoClick = document.querySelector('.text-content');
 twoClick.addEventListener('dblclick', (event) => {
+    event.target.style.backgroundColor = 'purple';
+    event.stopPropagation();
+});
+let twoClick2 = document.querySelector('.text-content p');
+twoClick2.addEventListener('dblclick', (event) => {
     event.target.style.backgroundColor = 'orange';
     event.stopPropagation();
 });
