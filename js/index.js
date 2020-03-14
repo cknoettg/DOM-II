@@ -92,6 +92,6 @@ let twoClick3 = document.querySelector('.text-content h2');
 twoClick2.addEventListener('dblclick', (event) => {
     //event.target.style.backgroundColor = 'orange';
     //CSSPlugin.defaultTransformPerspective = 400;
-    gsap.to("twoClick3", {duration: 3, x: 100});
+    gsap.to(twoClick3, {duration: 3, x: 100});
     event.stopPropagation();
 });
