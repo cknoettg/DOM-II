@@ -35,8 +35,9 @@ document.querySelectorAll(".nav a").forEach(element => {
 });
 
 //has a boolean as final condition and html must be modified to
-//draggable="true"
+//draggable="true" - we can set that attribute here in the js
 let dragp = document.querySelector('.intro p');
+dragp.draggable = "true";
 dragp.addEventListener('drag', (event) => {
     event.target.style.color = 'orange';
 }, false);
