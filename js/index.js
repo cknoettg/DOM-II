@@ -4,6 +4,7 @@
 // sampleButton.addEventListener('click', (event) => {
 //   alert('You Clicked the Sample Button!')
 // })
+import {TweenMax} from "gsap";
 
 let mouseTitle = document.querySelector('.logo-heading');
 mouseTitle.addEventListener('mouseover', (event) => {
@@ -89,10 +90,12 @@ twoClick2.addEventListener('dblclick', (event) => {
 });
 
 //added some GSAP
-let twoClick3 = document.querySelector('.text-content h2');
-twoClick2.addEventListener('dblclick', (event) => {
-    //event.target.style.backgroundColor = 'orange';
-    //CSSPlugin.defaultTransformPerspective = 400;
-    gsap.to(twoClick3, {duration: 3, x: 100});
-    event.stopPropagation();
-});
+// let twoClick3 = document.querySelector('.text-content h2');
+// twoClick3.style.border = "solid 2px black";
+// twoClick3.addEventListener('dblclick', (event) => {
+//     //event.target.style.backgroundColor = 'orange';
+//     //CSSPlugin.defaultTransformPerspective = 400;
+//     //gsap.to
+//     TweenMax.to(twoClick3, 3, {x: 100});
+//     event.stopPropagation();
+// });
